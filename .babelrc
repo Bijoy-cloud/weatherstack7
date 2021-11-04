@@ -1,0 +1,10 @@
+//this a json file it allow us to take all the argument passed through command line this is 
+// babel .\src\playground\es6-class.js --out-file=.\public\scripts\app.js --presets='env,react'
+//this is same as
+{
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": ["babel-plugin-react-scoped-css"]
+  }
