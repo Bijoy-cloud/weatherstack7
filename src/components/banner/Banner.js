@@ -12,7 +12,7 @@ function Banner() {
     const [chartData, setChartData] = useState({})
     const date = true
   
-   console.log('currently',data.isDay)
+  //  console.log('currently',context.time)
    
     
  useEffect(() => {
@@ -69,6 +69,7 @@ function Banner() {
    }
   return (
         <div className={(data.isDay=='n') ? 'banner-container night':'banner-container day'}>
+        
             {data.temp&&<div className='current-weather-container'>
                 <div className='container one'>
                     <p

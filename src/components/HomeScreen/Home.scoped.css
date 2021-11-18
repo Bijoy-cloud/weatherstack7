@@ -1,6 +1,9 @@
 .nav-container{
+    /* position: fixed; */
     display: block;
     width: 100%;
+    top:0;
+    height: 20vh;
 }
 .day{
     background: #0068e9;
@@ -33,4 +36,41 @@
     background: url('./search.svg') 100% no-repeat;
     background-size: 40px;
     
+}
+.btn-container{
+    width:50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
+    border-radius: 5px;
+    padding: 5px;
+}
+.home,.current{
+    background-color: #05b720cf;
+    color: white;
+}
+
+.page-one{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.swipe-container ::-webkit-scrollbar {
+    display: none;
+}
+.page-two{
+   
+    position: absolute;
+    left: 100%;
+    width: 100%;
+    
+}
+.page-two{
+    /* display: none; */
+    /* background-color: lightcoral; */
+    /* position: absolute; */
+    /* left: 100%; */
 }
