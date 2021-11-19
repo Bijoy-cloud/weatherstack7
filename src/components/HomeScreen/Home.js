@@ -84,22 +84,24 @@ function Home() {
         console.log('e is',e)
         return setInput(e.target.elements[0].value)
     }
-    // Swipe feature
+    // button 
   
     function showPageOne(){
-        pageOne.current.style.transition = 'all .3s'
-        pageTwo.current.style.transition = 'all .3s'
         pageOne.current.style.left = '0'
         pageTwo.current.style.left = '100%'
-        pageTwo.current.style.display = 'block'
+        pageTwo.current.style.display = 'none'
+        pageOne.current.style.transition = 'all .3s'
+        pageTwo.current.style.transition = 'all .3s'
+    
         setFlag('home')
     }
     function showPageTwo(){
-        pageOne.current.style.transition = 'all .3s'
-        pageTwo.current.style.transition = 'all .3s'
-        pageOne.current.style.left = '-100%'
         pageTwo.current.style.left = '0'
+        pageOne.current.style.left = '-100%'
+        pageTwo.current.style.transition = 'all .3s'
+        pageOne.current.style.transition = 'all .3s'
         pageTwo.current.style.display = 'block'
+
         setFlag('current')
     }
     return (
@@ -139,24 +141,21 @@ function Home() {
 
 
             <MyContext.Provider value={[result, data]}>
-            <div className='swipeContainer'>
+            
                 <div ref={pageOne}
                      className='page-one'
-                     >
+                >
                         <Banner />
                         <CurrentWeather />
                     
                 </div>
-                    <div ref={pageTwo}
+                <div ref={pageTwo}
+                    className='page-two'
+                >
+                   <SixteenDays input={input} />
                     
-                    className='page-two'>
-                   
-                   
-                    
-                        <SixteenDays input={input} />
-                    
-                    </div>
-            </div>
+                </div>
+            
 
             </MyContext.Provider>
 

@@ -67,8 +67,7 @@ const [chartData, setChartData] = useState({})
      }
     return (
       <React.Fragment>
-      
-        {context.isReady&&<div className='container'>
+       {context.isReady&&<div className='container'>
             <h2>Current details</h2>
             <table>
              <tbody>
