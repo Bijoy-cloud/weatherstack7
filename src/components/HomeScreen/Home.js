@@ -91,15 +91,14 @@ function Home() {
         pageTwo.current.style.left = '100%'
         pageTwo.current.style.display = 'none'
         pageOne.current.style.transition = 'all .3s'
-        pageTwo.current.style.transition = 'all .3s'
     
         setFlag('home')
     }
     function showPageTwo(){
         pageTwo.current.style.left = '0'
+        pageTwo.current.style.left = '0'
         pageOne.current.style.left = '-100%'
-        pageTwo.current.style.transition = 'all .3s'
-        pageOne.current.style.transition = 'all .3s'
+        pageOne.current.style.transition = 'none'
         pageTwo.current.style.display = 'block'
 
         setFlag('current')
@@ -139,9 +138,9 @@ function Home() {
 
             </div>
 
-
+        <div className='swiper-container'>
             <MyContext.Provider value={[result, data]}>
-            
+               
                 <div ref={pageOne}
                      className='page-one'
                 >
@@ -149,6 +148,7 @@ function Home() {
                         <CurrentWeather />
                     
                 </div>
+               
                 <div ref={pageTwo}
                     className='page-two'
                 >
@@ -158,7 +158,7 @@ function Home() {
             
 
             </MyContext.Provider>
-
+        </div>
         </React.Fragment>
 
 

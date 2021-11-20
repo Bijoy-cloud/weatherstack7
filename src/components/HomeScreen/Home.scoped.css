@@ -1,3 +1,4 @@
+
 .nav-container{
     /* position: fixed; */
     display: block;
@@ -5,6 +6,7 @@
     top:0;
     height: 130px;
     max-height: 20vh;
+    
 }
 .day{
     background: #0068e9;
@@ -58,16 +60,13 @@
     position: absolute;
     left: 0;
     width: 100%;
-    overflow: hidden;
-}
-.swipe-container ::-webkit-scrollbar {
-    overflow-x: hidden;
+    
 }
 .page-two{
     display: none;
     position: absolute;
     left: 100%;
-    width: 100%;
+    width: 100vw;
     height: 79vh;
 
 }
