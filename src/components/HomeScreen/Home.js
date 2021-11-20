@@ -125,14 +125,13 @@ function Home() {
                 <div className='btn-container'>
                     <button className= {`btn ${flag=='home'?'home':''}`}
                         onClick={showPageOne}
-
                         type="button">
                         Today
                     </button>
                     <button className={`btn ${flag=='current'?'current':''}`}
                         onClick={showPageTwo}
                         type="button">
-                        10 Days Forecast
+                        16 Days Forecast
                     </button>
                 </div>
 
@@ -146,14 +145,12 @@ function Home() {
                 >
                         <Banner />
                         <CurrentWeather />
-                    
                 </div>
                
                 <div ref={pageTwo}
                     className='page-two'
                 >
                    <SixteenDays input={input} />
-                    
                 </div>
             
 

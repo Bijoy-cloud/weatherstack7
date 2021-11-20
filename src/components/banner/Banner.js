@@ -4,16 +4,13 @@ import { Line } from 'react-chartjs-2'
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { MyContext } from '../HomeScreen/Home'
 
-
-
 function Banner() {
 
     const [context, data] = useContext(MyContext)
     const [chartData, setChartData] = useState({})
     const date = true
   
-  //  console.log('currently',context.time)
-   
+  //  console.log('currently',context.time
     
  useEffect(() => {
     if (context.isReady) {
@@ -23,7 +20,7 @@ function Banner() {
         labels: context.time,
         maintainAspectRatio: false,
         datasets: [{
-          label: 'Hourl Forecast',
+          label: 'Hourly Temperature',
           data: context.temperature,
           backgroundColor: '#1e81b0',
           barThickness:40,
@@ -69,8 +66,8 @@ function Banner() {
    }
   return (
         <div className={(data.isDay=='n') ? 'banner-container night':'banner-container day'}>
-        
-            {data.temp&&<div className='current-weather-container'>
+            
+        {data.temp&&<div className='current-weather-container'>
                 <div className='container one'>
                     <p
                     style={
