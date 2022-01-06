@@ -6,10 +6,10 @@ import './sixteenDays.scoped.css'
 function SixteenDays(props) {
     const input = props.input;
     const [data, setData] = useState({})
-    
+    const URL ='0cda2cf1ee7443c69b5cd14b5515ee51'
     useEffect(() => {
         if (input != null) {
-            axios.get(`https://api.weatherbit.io/v2.0/forecast/daily?city=${input}&key=4afa5d03f4cf4a8db3b9f1125ea48dff`)
+            axios.get(`https://api.weatherbit.io/v2.0/forecast/daily?city=${input}&key=${URL}`)
                 .then(response => {
                     let temp = []
                     let icon = []

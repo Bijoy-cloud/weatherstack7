@@ -26,10 +26,11 @@ function Home() {
     const [data, setData] = useState({})
     const pageOne = useRef(null)
     const pageTwo = useRef(null)
+    const URL = '0cda2cf1ee7443c69b5cd14b5515ee51'
     console.log('current flag is', flag)
     useEffect(() => {
         if (input != null) {
-            axios.get(`https://api.weatherbit.io/v2.0/current?city=${input}&key=4afa5d03f4cf4a8db3b9f1125ea48dff`)
+            axios.get(`https://api.weatherbit.io/v2.0/current?city=${input}&key=${URL}`)
                 .then(response => {
                     const res = response.data.data[0]
                     setData({
@@ -54,7 +55,7 @@ function Home() {
     let windSpeed = []
     useEffect(() => {
         if (input != null) {
-            axios.get(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${input}&key=4afa5d03f4cf4a8db3b9f1125ea48dff&hours=12`)
+            axios.get(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${input}&key=${URL}&hours=12`)
                 .then(response => {
 
                     for (const data of response.data.data) {
