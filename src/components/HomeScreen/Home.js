@@ -35,8 +35,8 @@ function Home() {
           const res = response.data.list[0];
           setData({
             icon_code: res.weather[0].icon,
-            temp: res.main.temp,
-            app_temp: res.main.feels_like,
+            temp: parseInt(res.main.temp),
+            app_temp: parseInt(res.main.feels_like),
             wind_spd: res.wind.speed,
             description: res.weather[0].description,
             humidity: res.main.humidity,
