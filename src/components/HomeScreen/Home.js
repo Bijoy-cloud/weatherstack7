@@ -4,7 +4,6 @@ import "./Home.scoped.css";
 import Banner from "../banner/Banner";
 import CurrentWeather from "./CurrentWeather";
 import SixteenDays from "../SixteenDays/sixteenDays";
-
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -26,27 +25,27 @@ function Home() {
   const [data, setData] = useState({});
   const pageOne = useRef(null);
   const pageTwo = useRef(null);
-  const URL = "0cda2cf1ee7443c69b5cd14b5515ee51";
+  const URL = "abed8df2d8070f78c69910037f3a0675";
   console.log("current flag is", flag);
   useEffect(() => {
     if (input != null) {
       axios
-        .get(`https://api.weatherbit.io/v2.0/current?city=${input}&key=${URL}`)
+        .get(`https://api.openweathermap.org/data/2.5/forecast?q=${input}&limit=1&appid=${URL}`)
         .then((response) => {
-          const res = response.data.data[0];
+          const res = response.data.list[0];
           setData({
-            icon_code: res.weather.icon,
-            temp: res.temp,
-            app_temp: res.app_temp,
-            wind_spd: res.wind_spd,
-            description: res.weather.description,
-            humidity: res.rh,
-            air_index: res.aqi,
-            sunrise: convertTime(res.sunrise),
-            sunset: res.sunset,
-            isDay: res.pod,
+            icon_code: res.weather[0].icon,
+            temp: res.main.temp,
+            app_temp: res.main.feels_like,
+            wind_spd: res.wind.speed,
+            description: res.weather[0].description,
+            humidity: res.main.humidity,
+            sealevel: res.main.sea_level,
+            visibility:res.visibility,
+           
+            isDay: res.sys.pod,
           });
-          console.log("iconcode is", data.icon_code);
+          // console.log("iconcode is", data.icon_code);
         });
     }
   }, [input]);
@@ -54,21 +53,24 @@ function Home() {
   let temp = [];
   let localTime = [];
   let windSpeed = [];
+  let count = 0;
   useEffect(() => {
     if (input != null) {
       axios
         .get(
-          `https://api.weatherbit.io/v2.0/forecast/hourly?city=${input}&key=${URL}&hours=12`
+          `https://api.openweathermap.org/data/2.5/forecast?q=${input}&limit=5&appid=${URL}`
         )
         .then((response) => {
-          for (const data of response.data.data) {
-            // console.log('temp is', data.temp)
-            temp.push(parseInt(data.temp));
-            localTime.push(convertTime(data.timestamp_local.slice(-8, -3)));
-            windSpeed.push(data.wind_spd);
+          for (const data of response.data.list) {
+            count++;
+            if(count==12) {break}
+           
+            temp.push(parseInt(data.main.temp-273));
+            localTime.push(convertTime(data.dt_txt.slice(11, 18)));
+            windSpeed.push(data.wind.speed);
           }
-          console.log("inside Effect");
-          console.log("windspeed is", windSpeed);
+          // console.log("inside Effect");
+          
 
           setResult({
             isReady: true,
@@ -136,7 +138,7 @@ function Home() {
             onClick={showPageTwo}
             type="button"
           >
-            16 Days Forecast
+            8 Days Forecast
           </button>
         </div>
       </div>

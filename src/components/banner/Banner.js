@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Styles from "./Banner.scoped.css";
-import { Line } from "react-chartjs-2";
+import { Line ,Pie} from "react-chartjs-2";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { MyContext } from "../HomeScreen/Home";
 
@@ -13,14 +13,14 @@ function Banner() {
 
   useEffect(() => {
     if (context.isReady) {
-      console.log("time is", context.time);
-      console.log("temperature is", context.temperature);
+      // console.log("time is", context.time);
+      // console.log("temperature is", context.temperature);
       setChartData({
         labels: context.time,
         maintainAspectRatio: false,
         datasets: [
           {
-            label: "Hourly Temperature",
+            label: "Temperature Forecast",
             data: context.temperature,
             backgroundColor: "#1e81b0",
             barThickness: 40,
@@ -45,7 +45,7 @@ function Banner() {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
-    title: { text: "Hourly Forcast", display: false },
+    title: { text: "Temperature Forcast", display: false },
     scales: {
       yAxes: {
         beginAtZero: true,
@@ -87,7 +87,7 @@ function Banner() {
           </div>
           <div className="container two">
             <img
-              src={`https://www.weatherbit.io/static/img/icons/${
+              src={`http://openweathermap.org/img/wn/${
                 data.icon_code
               }.png`}
             />

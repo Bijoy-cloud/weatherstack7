@@ -12,8 +12,8 @@ function CurrentWeather() {
   const [chartData, setChartData] = useState({});
   useEffect(() => {
     if (context.isReady) {
-      console.log("time is", context.time);
-      console.log("temperature is", context.windSpeed);
+      // console.log("time is", context.time);
+      // console.log("temperature is", context.windSpeed);
       setChartData({
         labels: context.time,
         maintainAspectRatio: false,
@@ -71,19 +71,19 @@ function CurrentWeather() {
             <tbody>
               <tr>
                 <td>Humidity</td>
-                <td className="right">{data.humidity}</td>
+                <td className="right">{data.humidity}%</td>
               </tr>
               <tr>
-                <td>Air-Index</td>
-                <td>{data.air_index}</td>
+                <td>sealevel</td>
+                <td>{data.sealevel}m</td>
               </tr>
               <tr>
-                <td>Sunrise</td>
-                <td>{data.sunrise}</td>
+                <td>visibility</td>
+                <td>{data.visibility}m</td>
               </tr>
               <tr>
-                <td>Sunset</td>
-                <td>{data.sunset}</td>
+                <td>Weather Description</td>
+                <td>{data.description}</td>
               </tr>
             </tbody>
           </table>
