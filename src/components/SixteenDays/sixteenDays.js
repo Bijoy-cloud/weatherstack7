@@ -12,7 +12,7 @@ function SixteenDays(props) {
     if (input != null) {
       axios
         .get(
-          `http://api.openweathermap.org/geo/1.0/direct?q=${input}&appid=${URL}`
+          `https://api.openweathermap.org/geo/1.0/direct?q=${input}&appid=${URL}`
         )
         .then((res) => {
           setlat(res.data[0].lat);
