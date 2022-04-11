@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "babel-plugin-react-scoped-css": "^1.1.1",
+    "bundlesize2": "^0.0.31",
     "scoped-css-loader": "^1.0.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.8.0"
@@ -44,7 +45,8 @@
     "build:prod": "webpack --mode production --config webpack.prod.js",
     "start": "node server/server.js",
     "dev-server": "webpack-dev-server --config webpack.dev.js",
-    "heroku-postbuild": "yarn run build:prod"
+    "heroku-postbuild": "yarn run build:prod",
+    "bundlesize": "bundlesize  --enable-github-checks"
   },
   "engines": {
     "node": "^17.3.0",
