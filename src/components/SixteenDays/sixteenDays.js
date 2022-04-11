@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./sixteenDays.scoped.css";
 
+const URL = "abed8df2d8070f78c69910037f3a0675";
+
 function SixteenDays(props) {
   const input = props.input;
   const [data, setData] = useState({});
   const [lat, setlat] = useState();
   const [lon, setlon] = useState();
-  const URL = "abed8df2d8070f78c69910037f3a0675";
+  
   useEffect(() => {
     if (input != null) {
       axios
@@ -20,6 +22,7 @@ function SixteenDays(props) {
         });
     }
   }, [input]);
+
   useEffect(() => {
     if (lon != null) {
       axios
