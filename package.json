@@ -44,9 +44,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:prod": "webpack --mode production --config webpack.prod.js",
     "start": "node server/server.js",
-    "dev-server": "webpack-dev-server --config webpack.dev.js",
-    "heroku-postbuild": "yarn run build:prod",
-    "bundlesize": "bundlesize  --enable-github-checks"
+    "dev-server": "webpack-dev-server --config webpack.dev.js"
   },
   "engines": {
     "node": "^17.3.0",
