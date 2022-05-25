@@ -1,8 +1,0 @@
-{
-    "files": [
-      {
-        "path": "public/bundle.js",
-        "maxSize": "125 kB"
-      }
-    ]
-  }

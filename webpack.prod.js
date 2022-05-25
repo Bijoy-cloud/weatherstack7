@@ -8,8 +8,8 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'production',
-  devtool:'source-map'
-  // ,
+  devtool:'source-map',
+  
   // 'plugins': [
   //   new LodashModuleReplacementPlugin,
   //   new BundleAnalyzerPlugin(),
@@ -17,6 +17,8 @@ module.exports = merge(common, {
 
   // ],
   
-
+  // stats: {
+  //   warnings: false
+  // }
     
 });
