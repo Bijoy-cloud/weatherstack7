@@ -45,10 +45,5 @@
     "start": "webpack-dev-server --config webpack.prod.js",
     "dev-server": "webpack-dev-server --config webpack.dev.js"
   },
-  "engines": {
-    "node": "^17.3.0",
-    "yarn": "1.22.17",
-    "npm": "^6.14.8"
-  },
   "description": ""
 }
