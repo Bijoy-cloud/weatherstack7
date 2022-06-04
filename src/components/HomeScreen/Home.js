@@ -26,7 +26,7 @@ function Home() {
   const pageOne = useRef(null);
   const pageTwo = useRef(null);
   const URL = "abed8df2d8070f78c69910037f3a0675";
-  console.log("current flag is", flag);
+  // console.log("current flag is", flag);
   useEffect(() => {
     if (input != null) {
       axios
@@ -46,7 +46,10 @@ function Home() {
             isDay: res.sys.pod,
           });
           // console.log("iconcode is", data.icon_code);
-        });
+        }).catch(function (error) {
+          console.log(error);
+          alert(error)
+        })
     }
   }, [input]);
 
@@ -86,7 +89,6 @@ function Home() {
   }, [input]);
   function handleSearch(e) {
     e.preventDefault();
-    console.log("e is", e);
     return setInput(e.target.elements[0].value);
   }
   // button

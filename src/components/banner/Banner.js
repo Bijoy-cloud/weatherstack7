@@ -81,7 +81,7 @@ function Banner() {
             >
               {date}
             </p>
-            <h3>Air index is {data.air_index}</h3>
+            <h3>Temperature is </h3>
             <h1>{data.temp-273}°C</h1>
             <p>feels like {data.app_temp-273}°C</p>
           </div>
