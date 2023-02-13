@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 import "./Home.scoped.css";
 import Banner from "../banner/Banner";
 import CurrentWeather from "./CurrentWeather";
@@ -46,7 +47,8 @@ function Home() {
             isDay: res.sys.pod,
           });
           // console.log("iconcode is", data.icon_code);
-        });
+        })
+        .catch(error=>alert("Input not valid"));
     }
   }, [input]);
 
@@ -80,7 +82,7 @@ function Home() {
           });
         })
         .catch((error) => {
-          console.log(error);
+          alert("input not valid");
         });
     }
   }, [input]);
@@ -110,6 +112,7 @@ function Home() {
   }
   return (
     <React.Fragment>
+     
       <meta
         name="viewport"
         content="width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no;user-scalable=0;"
