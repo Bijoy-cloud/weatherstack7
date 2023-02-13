@@ -47,8 +47,8 @@ function Home() {
           });
           // console.log("iconcode is", data.icon_code);
         }).catch(function (error) {
-          console.log(error);
-          alert(error)
+          // console.log(error);
+          alert("input not valid")
         })
     }
   }, [input]);
@@ -83,7 +83,7 @@ function Home() {
           });
         })
         .catch((error) => {
-          console.log(error);
+          alert("input not valid")
         });
     }
   }, [input]);
